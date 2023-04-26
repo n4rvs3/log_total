@@ -45,3 +45,10 @@ changelog:
 # Feel free to remove those if you don't want/use them.
 # yaml-language-server: $schema=https://goreleaser.com/static/schema.json
 # vim: set ts=2 sw=2 tw=0 fo=cnqoj
+
+brews:
+  - name: log_total
+  - tap:
+      owner: n4rvs3 # Homebrew Taps 用のリポジトリのオーナー名
+      name: homebrew-tap # Homebrew Taps 用のリポジトリ名
+      token: "{{ .Env.TAP_GITHUB_TOKEN }}" # `TAP_GITHUB_TOKEN` 環境変数をトークンとして使うようにする
