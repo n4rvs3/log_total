@@ -26,9 +26,7 @@ TAG	?=	$(shell git tag | tail -n1)
 .PHONY: package
 package:
 	mkdir -p ./packages/$(TAG)/log_total-$(TAG).$(GOOS)-$(GOARCH)
-	cp -r log_total.service \
-		sh.yml \
-		commands \
+	cp -r CREDITS \
 		Makefile \
 		LICENSE \
 		README.md \
