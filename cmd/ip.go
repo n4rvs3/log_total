@@ -14,7 +14,7 @@ var ipCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		var command string = `ionice -c2 -n7 nice -n19 grep ` + date + " " + path + ` | cut -d " " -f 1 | sort | uniq -c`
 		clipboard.WriteAll(command)
-		fmt.Println(command)
+		fmt.Println(command + "\n\nCopy Complete!")
 	},
 }
 

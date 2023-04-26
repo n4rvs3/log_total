@@ -17,9 +17,7 @@ It can generate commands from seconds to days.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		var command string = "ionice -c2 -n7 nice -n19 egrep " + date + " " + path + " | awk '{print $4}' | cut -b 2-18 | sort | uniq -c"
 		clipboard.WriteAll(command)
-		fmt.Println(command + `
-
-Copy Complete!`)
+		fmt.Println(command + "\n\nCopy Complete!")
 	},
 }
 
