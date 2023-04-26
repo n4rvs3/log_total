@@ -1,11 +1,9 @@
-/*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-*/
 package cmd
 
 import (
 	"fmt"
 
+	"github.com/atotto/clipboard"
 	"github.com/spf13/cobra"
 )
 
@@ -17,7 +15,11 @@ var reqCmd = &cobra.Command{
 	
 It can generate commands from seconds to days.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("grep " + date + " /var/log/httpd/access_log | awk '{print $4}' | cut -b 2-12 | sort | uniq -c")
+		var command string = "ionice -c2 -n7 nice -n19 egrep " + date + " " + path + " | awk '{print $4}' | cut -b 2-18 | sort | uniq -c"
+		clipboard.WriteAll(command)
+		fmt.Println(command + `
+
+Copy Complete!`)
 	},
 }
 
