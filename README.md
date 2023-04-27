@@ -1,15 +1,23 @@
-# Log_Total
+# log_total
 
-ApacheやNginxのログ集計を楽にしてくれるCLIツール。
+![](https://img.shields.io/github/actions/workflow/status/n4rvs3/log_total/release.yml?color=blue&label=release&logo=github&style=for-the-badge)
+![](https://img.shields.io/github/v/release/n4rvs3/log_total?style=for-the-badge)
 
-25/Apr/2023より開発開始。
+Provides a cli command that can be used to perform access log aggregation for apache and nginx.
 
-## Demo
+## 💻 Installation
 
-https://user-images.githubusercontent.com/86728646/234322395-420e281d-2379-4ce0-ad26-63e8a9fc4c51.mp4
+### Using Homebrew
 
-## DevEnv
+```
+$ brew install n4rvs3/tap/log_total
+```
 
-- Go 1.19
-- github.com/spf13/cobra v1.7.0
-- github.com/spf13/pflag v1.0.5
+### Manual Install
+
+[You can download the appropriate package for your architecture from the release page.](https://github.com/n4rvs3/log_total/releases)
+
+```
+$ wget ${packages link}
+$ tar xvf ${download packages}
+```

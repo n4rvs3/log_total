@@ -13,7 +13,7 @@ import (
 var date string
 var path string
 
-var NowDate string = "'" + time.Now().Format("2/Jan/2006/15") + "'"
+var NowDate string = time.Now().Format("2/Jan/2006:15")
 var DefaultPath string = "/var/log/httpd/access_log"
 
 var rootCmd = &cobra.Command{
