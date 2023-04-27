@@ -12,6 +12,7 @@ import (
 
 var date string
 var path string
+var sudo bool
 
 var NowDate string = time.Now().Format("2/Jan/2006:15")
 var DefaultPath string = "/var/log/httpd/access_log"
@@ -34,4 +35,5 @@ func Execute() {
 func init() {
 	rootCmd.PersistentFlags().StringVarP(&date, "date", "d", NowDate, "You can set the date and time in dd/mm/yy format.")
 	rootCmd.PersistentFlags().StringVarP(&path, "path", "p", DefaultPath, "You can set the access log path.")
+	rootCmd.PersistentFlags().BoolVarP(&sudo, "sudo", "s", false, "You can set prefix sudo.")
 }

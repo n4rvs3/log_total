@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/atotto/clipboard"
+	"github.com/n4rvs3/log_total/myfunc"
 	"github.com/spf13/cobra"
 )
 
@@ -15,9 +16,11 @@ var reqCmd = &cobra.Command{
 	
 It can generate commands from seconds to days.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		var command string = "ionice -c2 -n7 nice -n19 egrep " + date + " " + path + " | awk '{print $4}' | cut -b 2-18 | sort | uniq -c"
+		command := "egrep " + date + " " + path + " | awk '{print $4}' | cut -b 2-18 | sort | uniq -c"
+		command = myfunc.BoolSudo(sudo, command)
 		clipboard.WriteAll(command)
 		fmt.Println(command + "\n\nCopy Complete!")
+		fmt.Println(date)
 	},
 }
 
