@@ -10,7 +10,7 @@ Provides a cli command that can be used to perform access log aggregation for ap
 
 ### Using Homebrew
 
-```
+```Shell
 $ brew install n4rvs3/tap/log_total
 ```
 
@@ -18,7 +18,16 @@ $ brew install n4rvs3/tap/log_total
 
 [You can download the appropriate package for your architecture from the release page.](https://github.com/n4rvs3/log_total/releases)
 
-```
+```Shell
 $ wget ${packages link}
 $ tar xvf ${download packages}
+```
+
+## 🔧 Updating
+
+### Using Homebrew
+
+```Shell
+$ brew update
+$ brew upgrade log_total
 ```
