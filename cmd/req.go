@@ -20,7 +20,6 @@ It can generate commands from seconds to days.`,
 		command = myfunc.BoolSudo(sudo, command)
 		clipboard.WriteAll(command)
 		fmt.Println(command + "\n\nCopy Complete!")
-		fmt.Println(date)
 	},
 }
 
